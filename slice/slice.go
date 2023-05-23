@@ -1,7 +1,5 @@
 package slice
 
-import _map "github.com/dabao-zhao/helper/map"
-
 // Diff 差集
 func Diff[T comparable](sliceA, sliceB []T) (result []T) {
 	set := make(map[T]struct{}, len(sliceB))
@@ -53,16 +51,19 @@ func Intersect[T comparable](ss []T, slices ...[]T) (ss2 []T) {
 }
 
 // Unique 去重
-func Unique[T comparable](ss []T) []T {
+func Unique[T comparable](ss []T) (result []T) {
 	if len(ss) < 2 {
 		return ss
 	}
 
-	values := map[T]struct{}{}
+	tmp := map[T]struct{}{}
 
 	for _, value := range ss {
-		values[value] = struct{}{}
+		if _, ok := tmp[value]; !ok {
+			tmp[value] = struct{}{}
+			result = append(result, value)
+		}
 	}
 
-	return _map.Keys(values)
+	return result
 }

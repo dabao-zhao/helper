@@ -80,3 +80,29 @@ func TestIntersect(t *testing.T) {
 		})
 	}
 }
+
+var uniqueTests = []struct {
+	s        []int64
+	expected []int64
+}{
+	{
+		nil,
+		nil,
+	},
+	{
+		[]int64{1, 1, 1},
+		[]int64{1},
+	},
+	{
+		[]int64{2, 3, 4},
+		[]int64{2, 3, 4},
+	},
+}
+
+func TestUnique(t *testing.T) {
+	for _, test := range uniqueTests {
+		t.Run("", func(t *testing.T) {
+			assert.Equal(t, test.expected, Unique(test.s))
+		})
+	}
+}
