@@ -14,4 +14,3 @@ func TestNewHttp(t *testing.T) {
 	assert.Equal(t, time.Second, h.Timeout)
 	assert.Equal(t, headers, h.Headers)
 }
-
