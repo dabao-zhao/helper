@@ -1,4 +1,4 @@
-package _map
+package xmap
 
 import (
 	"sort"

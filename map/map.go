@@ -1,4 +1,4 @@
-package _map
+package xmap
 
 // Keys 获取 map 的所有 key
 func Keys[K comparable, V any](m map[K]V) []K {

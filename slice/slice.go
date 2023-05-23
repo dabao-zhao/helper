@@ -1,4 +1,4 @@
-package slice
+package xslice
 
 // Diff 差集
 func Diff[T comparable](sliceA, sliceB []T) (result []T) {
