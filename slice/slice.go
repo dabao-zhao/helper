@@ -67,3 +67,13 @@ func Unique[T comparable](ss []T) (result []T) {
 
 	return result
 }
+
+// Contains 检查 ss 是否包含 target
+func Contains[T comparable](ss []T, target T) bool {
+	for _, s := range ss {
+		if s == target {
+			return true
+		}
+	}
+	return false
+}

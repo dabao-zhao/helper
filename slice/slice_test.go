@@ -106,3 +106,33 @@ func TestUnique(t *testing.T) {
 		})
 	}
 }
+
+var ContainsTests = []struct {
+	s        []int64
+	target   int64
+	expected bool
+}{
+	{
+		nil,
+		0,
+		false,
+	},
+	{
+		[]int64{1, 2, 3, 4},
+		1,
+		true,
+	},
+	{
+		[]int64{2, 3, 4},
+		1,
+		false,
+	},
+}
+
+func TestContains(t *testing.T) {
+	for _, test := range ContainsTests {
+		t.Run("", func(t *testing.T) {
+			assert.Equal(t, test.expected, Contains(test.s, test.target))
+		})
+	}
+}
