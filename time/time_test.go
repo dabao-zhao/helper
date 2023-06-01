@@ -1,4 +1,4 @@
-package time
+package xtime
 
 import (
 	"testing"

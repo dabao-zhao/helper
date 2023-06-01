@@ -1,4 +1,4 @@
-package md5
+package xmd5
 
 import (
 	"os"

@@ -1,4 +1,4 @@
-package random
+package xrandom
 
 import (
 	"math/rand"

@@ -1,6 +1,6 @@
 // Copyright (c) 2020 Qi Yin <qiyin@thinkeridea.com>
 
-package time
+package xtime
 
 import "time"
 
