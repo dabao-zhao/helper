@@ -136,3 +136,7 @@ func TestContains(t *testing.T) {
 		})
 	}
 }
+
+func TestMerge(t *testing.T) {
+	assert.Equal(t, []int64{1, 2, 3, 4, 5, 6, 7}, Merge([]int64{1, 2}, []int64{3, 4}, []int64{5, 6, 7}))
+}

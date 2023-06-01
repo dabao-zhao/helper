@@ -77,3 +77,12 @@ func Contains[T comparable](ss []T, target T) bool {
 	}
 	return false
 }
+
+// Merge 合并 slice
+func Merge[T any](slices ...[]T) []T {
+	var newSlice []T
+	for _, s := range slices {
+		newSlice = append(newSlice, s...)
+	}
+	return newSlice
+}
