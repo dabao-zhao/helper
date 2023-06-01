@@ -26,7 +26,7 @@ func GetRemoteClientIp(r *http.Request) string {
 	return remoteIp
 }
 
-// GetOutBoundIP 获取本地对外 IP
+// GetOutBoundIP 获取本地对外 IP，也就是公网 IP
 func GetOutBoundIP() (ip string, err error) {
 	conn, err := net.Dial("udp", "8.8.8.8:53")
 	if err != nil {
@@ -35,5 +35,22 @@ func GetOutBoundIP() (ip string, err error) {
 	}
 	localAddr := conn.LocalAddr().(*net.UDPAddr)
 	ip = strings.Split(localAddr.String(), ":")[0]
+	return
+}
+
+// GetLocalIP 获取内网ip
+func GetLocalIP() (ip string, err error) {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		return ip, err
+	}
+	for _, a := range addrs {
+		if ipnet, ok := a.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+			if ipnet.IP.To4() != nil {
+				ip = ipnet.IP.String()
+				break
+			}
+		}
+	}
 	return
 }
