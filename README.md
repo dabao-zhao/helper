@@ -8,3 +8,4 @@
 - [anerg2046/utils-go](https://github.com/anerg2046/utils-go)
 - [lei006/go-assist](https://github.com/lei006/go-assist)
 - [open-tdp/go-helper](https://github.com/open-tdp/go-helper)
+- [jefferyjob/go-easy-utils](https://github.com/jefferyjob/go-easy-utils)
