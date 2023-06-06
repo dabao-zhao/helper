@@ -86,3 +86,30 @@ func Merge[T any](slices ...[]T) []T {
 	}
 	return newSlice
 }
+
+// FirstOr 获取第一个元素，如果不存在返回 elseVal
+func FirstOr[T any](sl []T, elseVal T) T {
+	if len(sl) > 0 {
+		return sl[0]
+	}
+	return elseVal
+}
+
+// Reverse 反转
+func Reverse[T any](ss []T) {
+	ln := len(ss)
+	for i := 0; i < ln/2; i++ {
+		li := ln - i - 1
+		ss[i], ss[li] = ss[li], ss[i]
+	}
+}
+
+// IndexOf 获取 list 中第一个匹配  val 的下标，未匹配返回 -1
+func IndexOf[T comparable](list []T, val T) int {
+	for i, v := range list {
+		if v == val {
+			return i
+		}
+	}
+	return -1
+}
