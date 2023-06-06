@@ -2,6 +2,8 @@
 
 一丢丢 go 的辅助函数
 
+发现一个不错的[gookit/goutil](https://github.com/gookit/goutil)推荐使用
+
 ## 参考
 
 - [elliotchance/pie](github.com/elliotchance/pie)  
