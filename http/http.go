@@ -38,7 +38,7 @@ func NewHttp(opt ...Options) *Http {
 	return h
 }
 
-func (h *Http) Post(url string, data any) ([]byte, error) {
+func (h *Http) Post(url string, data map[string]any) ([]byte, error) {
 	param, err := json.Marshal(data)
 	if err != nil {
 		return nil, err
