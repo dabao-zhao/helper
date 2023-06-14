@@ -12,3 +12,11 @@ func Midnight() time.Time {
 func ParseInLocal(layout, value string) (time.Time, error) {
 	return time.ParseInLocation(layout, value, time.Local)
 }
+
+func Yesterday() time.Time {
+	return time.Now().AddDate(0, 0, -1)
+}
+
+func Tomorrow() time.Time {
+	return time.Now().AddDate(0, 0, -1)
+}
