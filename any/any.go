@@ -1,5 +1,11 @@
 package any
 
+import (
+	"encoding/json"
+	"errors"
+	"strconv"
+)
+
 // ToString 将 value 转换为字符串
 func ToString(value any) string {
 	var key string
@@ -84,28 +90,6 @@ func ToInt32(value any) (int32, error) {
 			return 0, err
 		}
 		return int32(val), nil
-	}
-	return 0, errors.New("value error")
-}
-
-func ToInt64(value any) (int64, error) {
-	switch value.(type) {
-	case int:
-		return int64(value.(int)), nil
-	case int32:
-		return int64(value.(int32)), nil
-	case int64:
-		return value.(int64), nil
-	case float64:
-		return int64(value.(float64)), nil
-	case float32:
-		return int64(value.(float32)), nil
-	case string:
-		return StrToInt64(value.(string)), nil
-	case jsoniter.Number:
-		return value.(jsoniter.Number).Int64()
-	case json2.Number:
-		return value.(json2.Number).Int64()
 	}
 	return 0, errors.New("value error")
 }

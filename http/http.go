@@ -8,7 +8,7 @@ import (
 	netUrl "net/url"
 	"time"
 
-	xstring "github.com/dabao-zhao/helper/string"
+	xany "github.com/dabao-zhao/helper/any"
 )
 
 type Http struct {
@@ -83,7 +83,7 @@ func (h *Http) Get(rawUrl string, data map[string]any) ([]byte, error) {
 	}
 	query := url.Query()
 	for k, v := range data {
-		query.Set(k, xstring.ToString(v))
+		query.Set(k, xany.ToString(v))
 	}
 	url.RawQuery = query.Encode()
 
